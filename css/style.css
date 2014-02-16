@@ -1,0 +1,209 @@
+body{
+	background-color: #76BC87;
+	font-family: arial;
+}
+
+#container {
+	background-color: #3da055;
+	width: 860px;
+	margin: auto;
+	padding: 5px;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+#editing{
+	text-align: center;
+	padding-bottom: 2px;
+	color: white;
+}
+
+#clearStorage{
+	text-align: center;
+	padding: 10px;
+}
+
+input[type=number]{
+	width: 60px;
+}
+
+div#productInputs{
+	text-align: center;
+}
+
+div.newProduct{
+	text-align: left;
+}
+
+
+div#newProduct{
+	display: inline-block;
+	width: 400px;
+	border: 2px solid black;
+}
+
+div.newProduct {
+	background: #3da055;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 20px;
+	width: 400px;
+	display: inline-block;
+	width: 500px;
+}
+
+div.newProduct ol li label.error{
+	white-space: nowrap;
+	color: #730303;
+	position: absolute;
+	display: inline;
+
+	border-radius: 5px;
+	padding-right: 12px;
+	padding-left: 12px;
+	margin-left: 10px;
+	
+	/*
+	width: 165px !important;
+	background: #99e8ad;
+	border: 1px solid gray;
+	*/
+}
+
+/* inventory style*/
+
+div.inventoryProduct {
+	background: #e2ebbf;
+	background: rgba(255,255,255,.7);
+	border-style: solid;
+	border-width: 2px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	line-height: 25px;
+	list-style: none;
+	padding: 5px 10px;
+	margin-bottom: 2px;
+	width: 260px;
+	display: inline-block;
+	vertical-align: top;
+	min-height: 200px;
+	position: relative;
+}
+
+div.inventoryProduct span{
+	font-weight: bold;
+	font-size: 14px;
+}
+
+div.invName{
+	font-weight: bold;
+	display: inline;
+	font-size: 20px;
+}
+
+div.invID{
+	font-style: italic;
+	color: #6c6c6c;
+	display: inline;
+}
+
+div.invDesc{
+	font-style: italic;
+}	
+
+div.invLinks{
+	text-align: right;
+	position: absolute;
+	right: 5px;
+	bottom: 0px;
+}
+
+/* form style*/
+
+
+
+form#editForm fieldset {
+	border: none;
+	margin-bottom: 10px;
+}
+form#editForm fieldset:last-of-type {
+	margin-bottom: 0;
+}
+
+
+form#editForm ol li {
+	background: #b9cf6a;
+	background: rgba(255,255,255,.3);
+	border-color: #e3ebc3;
+	border-color: rgba(255,255,255,.6);
+	border-style: solid;
+	border-width: 2px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	line-height: 30px;
+	list-style: none;
+	padding: 5px 10px;
+	margin-bottom: 2px;
+}
+
+form#editForm ol ol li {
+	background: none;
+	border: none;
+	float: left;
+}
+
+form#editForm label {
+	float: left;
+	font-size: 13px;
+	width: 110px;
+}
+form#editForm fieldset fieldset label {
+	background:none no-repeat left 50%;
+	line-height: 20px;
+	padding: 0 0 0 30px;
+	width: auto;
+}
+
+
+form#editForm textarea {
+	background: #ffffff;
+	border: none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	outline: none;
+	padding: 5px;
+	width: 200px;
+}
+form#editForm input:not([type=submit]):focus,
+form#editForm textarea:focus {
+	background: #eaeaea;
+}
+
+form#editForm button {
+	background: #384313;
+	border: none;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-khtml-border-radius: 20px;
+	border-radius: 20px;
+	color: #ffffff;
+	display: block;
+	font: 18px Georgia, "Times New Roman", Times, serif;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: 7px 25px;
+	text-shadow: 0 1px 1px #000000;
+	text-transform: uppercase;
+}
+form#editForm button:hover {
+	background: #1e2506;
+	cursor: pointer;
+}
+

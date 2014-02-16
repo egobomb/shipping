@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+
+    <div id="container">
+		<header>
+		    <img src="img/logo.gif">
+	    </header>
+	    
+	    <div id="main">
+			<form method="POST" name="editForm" id="editForm">
+				<div id="productInputs">
+					<div class="newProduct" id="product">
+						<input type="hidden" name="productID" id="productID">
+						<div id="editing">New Product</div>
+						<fieldset>
+							<ol>
+								<li>
+									<label for="productName">Name</label>
+									<input type="text" id="productName" name="productName" placeholder="Product Name" minlength="2" maxlength="40" required autofocus>
+								</li>
+																
+								<li>
+									<label for="productLength">Length (in inches)</label>
+									<input type="number" id="productLength" name="productLength" placeholder="Length"  maxlength="8" required>
+								</li>
+								
+								<li>
+									<label for="productWidth">Width (in inches)</label>
+									<input type="number" id="productWidth" name="productWidth" placeholder="Width" maxlength="8" required>
+								</li>
+								
+								<li>
+									<label for="productHeight">Height (in inches)</label>
+									<input type="number" id="productHeight" name="productHeight" placeholder="Height"  maxlength="8" required>
+								</li>
+								
+								<li>
+									<label for="productWeight">Weight (in lbs)</label>
+									<input type="number" id="productWeight" name="productWeight" placeholder="Weight"  maxlength="8" required>
+								</li>
+								
+								<li>
+									<label for="productValue">Value (in dollars)</label>
+									<input type="number" id="productValue" name="productValue" placeholder="Value"  maxlength="8" required>
+								</li>
+								
+								<li>
+									<label for="productDesc">Description</label>
+									<textarea id="productDesc" name="productDesc" placeholder="Description"></textarea>
+								</li>
+							</ol>
+						</fieldset>
+					</div><br />
+					<input type="submit" value="Submit" name="submit">
+				</div>
+			</form>
+			
+			<div id="inventory"></div>
+			<div id="clearStorage">[<a href="javascript:void(0)" onclick="SW.clearLocalStorage()">Clear Local Storage</a>]</div>
+	    </div>
+    </div>
+
+    
+    <footer>
+
+    </footer>
+
+    <script src="js/vendor/jquery-1.8.2.min.js"></script>
+    <script src="js/vendor/underscore.min.js"></script>
+    <script src="js/vendor/backbone.min.js"></script>
+    <script src="js/vendor/mustache.js"></script>
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script src="js/toolbelt.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!- Inventory Template ->
+	
+	<script type="text/html" id="template-inventory">
+		{{^initialized}}<div class="inventoryProduct" id="inv-{{{id}}}">{{/initialized}}
+			<div class="invName">{{{productName}}}</div>
+			<div class="invID">(Product ID #{{{id}}})</div>
+			<div class="invSize"><span title="Length x Width x Height">Size:</span> {{{productWidth}}} x {{{productLength}}} x {{{productHeight}}}</div>
+			<div class="invWeight"><span>Weight:</span> {{{productWeight}}} lbs.</div>
+			<div class="invValue"><span>Value:</span> ${{{productValue}}}</div>
+			<div class="invDesc">{{{productDesc}}}</div>
+			<div class="invLinks">
+				<a href="javascript:void(0)" onClick="SW.edit({{{id}}})"><img src="img/edit.gif" title="edit"></a>
+				<a href="javascript:void(0)" onClick="SW.del({{{id}}})"><img src="img/delete.gif" title="delete"></a>
+			</div>
+		{{^initialized}}</div>{{/initialized}}
+	</script>
+	
+</body>
+</html>
